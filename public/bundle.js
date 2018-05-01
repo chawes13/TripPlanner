@@ -97,10 +97,23 @@ eval("var g;\n\n// This works in non-strict mode\ng = (function() {\n\treturn th
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-eval("const mapboxgl = __webpack_require__(/*! mapbox-gl */ \"./node_modules/mapbox-gl/dist/mapbox-gl.js\");\n\nmapboxgl.accessToken = \"pk.eyJ1IjoiY2hhd2VzIiwiYSI6ImNqZ28zaDg3NzBvdW8ycXIxbTd1cGgxb2QifQ.qqh3iNQQkCywkfa8ozkMmg\";\n\nconst map = new mapboxgl.Map({\n  container: \"map\",\n  center: [-87.639, 41.8954], // FullStack NY coordinates; alternatively, use [-87.6354, 41.8885] for Chicago\n  zoom: 15, // starting zoom\n  style: \"mapbox://styles/mapbox/streets-v10\" // mapbox has lots of different map styles available.\n});\n\nconst markerElement = document.createElement('div');\nmarkerElement.style.width = \"15px\";\nmarkerElement.style.height = \"15px\";\nmarkerElement.style.backgroundColor = \"red\";\n\nnew mapboxgl.Marker(markerElement).setLngLat([-87.639, 41.8954]).addTo(map);\n\n\n//# sourceURL=webpack:///./src/index.js?");
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _marker__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./marker */ \"./src/marker.js\");\nconst mapboxgl = __webpack_require__(/*! mapbox-gl */ \"./node_modules/mapbox-gl/dist/mapbox-gl.js\");\n\n\nmapboxgl.accessToken = \"pk.eyJ1IjoiY2hhd2VzIiwiYSI6ImNqZ28zaDg3NzBvdW8ycXIxbTd1cGgxb2QifQ.qqh3iNQQkCywkfa8ozkMmg\";\n\nconst map = new mapboxgl.Map({\n  container: \"map\",\n  center: [-87.639, 41.8954], // FullStack NY coordinates; alternatively, use [-87.6354, 41.8885] for Chicago\n  zoom: 15, // starting zoom\n  style: \"mapbox://styles/mapbox/streets-v10\" // mapbox has lots of different map styles available.\n});\n\nObject(_marker__WEBPACK_IMPORTED_MODULE_0__[\"default\"])('activity', [-87.639, 41.8954]).addTo(map);\n\n//# sourceURL=webpack:///./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/marker.js":
+/*!***********************!*\
+  !*** ./src/marker.js ***!
+  \***********************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\nlet mapboxgl = __webpack_require__(/*! mapbox-gl */ \"./node_modules/mapbox-gl/dist/mapbox-gl.js\");\n\nlet markerFactory = (type, coord) => {\n    const markerElement = document.createElement('div');\n    markerElement.style.width = \"20px\";\n    markerElement.style.height = \"20px\";\n    markerElement.style.backgroundSize = 'contain';\n    markerElement.style.backgroundRepeat = 'no-repeat';\n\n    switch(type.toLowerCase()) {\n        case 'hotel': \n            markerElement.style.backgroundImage = \"url('http://i.imgur.com/D9574Cu.png')\";\n            break;\n        case 'activity':\n            markerElement.style.backgroundImage = \"url('http://i.imgur.com/WbMOfMl.png')\";    \n            break;\n        case 'restaurant':\n            markerElement.style.backgroundImage = \"url('http://i.imgur.com/cqR6pUI.png')\";\n            break;\n        default:\n            markerElement.style.backgroundColor = \"red\"        \n    }\n\n    return new mapboxgl.Marker(markerElement).setLngLat(coord);  \n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (markerFactory);\n\n//# sourceURL=webpack:///./src/marker.js?");
 
 /***/ })
 
