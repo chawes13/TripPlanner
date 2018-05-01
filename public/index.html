@@ -1,12 +1,52 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Trip Planner</title>
+    <title>Trip Planner LLC</title>
     <link href='https://api.mapbox.com/mapbox-gl-js/v0.44.2/mapbox-gl.css' rel='stylesheet' />
     <link rel="stylesheet" href="./style.css"></link>
   </head>
   <body>
-    <div id="map"></div>
+
+    <header>
+      <div class="logo">
+        <h3>TripPlanner LLC</h3>
+      </div>
+      <nav>
+        <div class="nav-item">
+          <a href="#">Trips</a>
+        </div>
+        <div class="nav-item">
+          <a href="#">Budget</a>
+        </div>
+        <div class="nav-item">
+          <a href="#">Dates</a>
+        </div>
+      </nav>
+    </header>
+
+    <section id="map">
+      <div id="map"></div>
+      <div id="markers">
+        <h3>Hotels</h3>
+        <h3>Restaurants</h3>
+        <h3>Activities</h3>
+      </div>
+      <div id="itinerary">
+        <h2>Itinerary:</h2>
+        <h3>My Hotels</h3>
+          <ul>
+            <li>Marriott Downtown</li>
+          </ul>
+        <h3>My Restaurants</h3>
+          <ul>
+            <li>Cafe Ba Bareeba <span class="delete">X</span></li>
+          </ul>
+        <h3>My Activities</h3>
+          <ul>
+            <li>Running on the Lakefront Path</li>
+          </ul>
+      </div>
+    </section>
     <script src="./bundle.js"></script>
   </body>
 </html>

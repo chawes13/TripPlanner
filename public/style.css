@@ -11,4 +11,13 @@
   #map {
     height: 100vh;
     width: 100vw;
+    position: absolute;
+  }
+
+  header {
+    background-color: rgb(236, 108, 11);
+    /* position: fixed; */
+    display: flex;
+    z-index: 1;
+    width: 100vw;
   }
