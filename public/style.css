@@ -2,22 +2,93 @@
     box-sizing: border-box;
   }
 
-  body {
-    margin: 0;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    background-color: #C1B5AD;
+body {
+  margin: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: #C1B5AD;
+}
+
+header {
+  background-color: rgb(236, 108, 11);
+  display: flex;
+  height: 3em;
+  align-items: center;
+  padding: 0 1em;
+}
+
+.logo {
+  flex: 4;
+}
+
+nav {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#app {
+  display: flex;
+}
+
+#map {
+  flex: 2 ;
+  height: calc(100vh - 3em);
+  overflow: hidden;
+}
+
+#selections {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.panel {
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);;
+}
+
+.panel-nested {
+  margin: 1rem;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);;
+}
+
+#markers {
+  background-color: rgba(222, 184, 135, .80);
+}
+
+#itinerary {
+  background-color: rgba(195, 230, 2, 0.80);
+  position: relative;
+}
+
+#itinerary-header {
+  background-color: rgba(255, 174, 0, 0.80);
+  display: block;
+  top: 0;
+  left: 0;
+  padding: 5px 5px;
+  width: 100%;
+}
+
+#my-selections {
+  padding: 1rem;
+}
+
+@media (max-width: 768px) {
+  #app {
+    display: block;
   }
 
   #map {
-    height: 100vh;
-    width: 100vw;
-    position: absolute;
+    height: calc(50vh - 3em);
+    margin: 1rem;
+    border-radius: 2px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);;
   }
+}
 
-  header {
-    background-color: rgb(236, 108, 11);
-    /* position: fixed; */
-    display: flex;
-    z-index: 1;
-    width: 100vw;
-  }
